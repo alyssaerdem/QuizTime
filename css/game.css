@@ -1,0 +1,109 @@
+.choice-container {
+  display: flex;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  font-size: 1.8rem;
+  border: 0.1rem solid rgb(86, 165, 235, 0.25);
+  background-color: white;
+  border-radius: 5px;
+}
+
+.choice-container:hover {
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transform: translate(-0.2rem);
+  transition: transform 150ms;
+  border-radius: 10px;
+}
+
+.choice-prefix {
+  padding: 1.5rem 1.5rem;
+  color: var(--main);
+}
+
+.choice-text {
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.correct {
+  background-color: #aee8bb;
+  border: 2px solid #91e9a4;
+}
+
+.incorrect {
+  background-color: #e58c95;
+  animation: horizontal-shaking 0.8s;
+  border: 2px solid #e8717d;
+}
+#question {
+  font-size: 3rem;
+}
+#display {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.display-prefix {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.display-main-text {
+  text-align: center;
+}
+
+@keyframes horizontal-shaking {
+  0%,
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(0px);
+  }
+  10%,
+  50% {
+    transform: translate(2px);
+  }
+  30%,
+  70% {
+    transform: translate(-2px);
+  }
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid var(--main);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--main) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
